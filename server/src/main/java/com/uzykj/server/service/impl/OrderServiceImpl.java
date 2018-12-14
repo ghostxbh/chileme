@@ -15,6 +15,7 @@ import com.uzykj.server.utils.KeyUtil;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -52,18 +53,19 @@ public class OrderServiceImpl implements OrderService {
                     //订单详情入库
                     orderDetailMapper.save(orderDetail);
                 }
+            }
         }
-    }
         //扣库存（调用商品服务）
         List<CartDTO> cartDTOList = orderDTO.getDetailList().stream().map(e -> new CartDTO(e.getProductId(), e.getProductQuantity())).collect(Collectors.toList());
         productClient.decreaseStock(cartDTOList);
         //订单入库
         OrderMaster orderMaster = new OrderMaster();
-        orderDTO.setCode(KeyUtil.getUniqueKey());
+        orderMaster.setId(KeyUtil.getUniqueKey());
         BeanUtils.copyProperties(orderDTO, orderMaster);
-        orderMaster.setAmount(Double.valueOf(amount));
+        orderMaster.setAmount(amount);
         orderMaster.setOrderStatus(OrderStatusEnum.NEW.getCode());
         orderMaster.setPayStatus(PayStatusEnum.WAIT.getCode());
+
         orderMasterMapper.save(orderMaster);
         return orderDTO;
     }

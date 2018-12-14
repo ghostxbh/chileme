@@ -2,7 +2,7 @@ package com.uzykj.server.controller;
 
 
 import com.uzykj.server.pojo.dto.OrderDTO;
-import com.uzykj.server.pojo.vo.ResultVo;
+import com.uzykj.server.pojo.vo.ResultVO;
 import com.uzykj.server.service.OrderService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,10 +35,10 @@ public class OrderController {
      * 5、订单入库
      */
     @PostMapping("/create")
-    public ResultVo<Map<String,String>> create(@RequestBody OrderDTO orderDTO){
+    public ResultVO<Map<String,String>> create(@RequestBody OrderDTO orderDTO){
         Map<String,String> map = new HashMap<>();
         OrderDTO orderDTO1 = orderService.create(orderDTO);
         map.put("orderDTO",orderDTO1.toString());
-        return new ResultVo(1,"OK",map);
+        return new ResultVO(1,"OK",map);
     }
 }

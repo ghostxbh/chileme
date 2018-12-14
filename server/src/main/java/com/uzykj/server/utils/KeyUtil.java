@@ -16,7 +16,7 @@ public class KeyUtil {
      */
     public static synchronized String getUniqueKey() {
         Random random = new Random();
-        int nuber = random.nextInt(90000) + 100000;
+        int nuber = random.nextInt(900000) + 100000;
         return System.currentTimeMillis() + String.valueOf(nuber);
     }
 }

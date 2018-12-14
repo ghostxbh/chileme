@@ -4,6 +4,7 @@ package com.uzykj.server.pojo.dto;
 import com.uzykj.server.pojo.model.OrderDetail;
 import lombok.Data;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 
@@ -14,17 +15,17 @@ import java.util.List;
 @Data
 public class OrderDTO {
 
-    private String code;
+    private String orderId;
 
-    private String name;
+    private String buyerName;
 
-    private String phone;
+    private String buyerPhone;
 
-    private String address;
+    private String buyerAddress;
 
-    private String openid;
+    private String buyerOpenid;
 
-    private Double amount;
+    private BigDecimal orderAmount;
 
     private Integer orderStatus;
 

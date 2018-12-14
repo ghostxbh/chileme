@@ -9,7 +9,7 @@ import lombok.Data;
  * @Date: 11/12/2018 11:34
  */
 @Data
-public class ResultVo<T> {
+public class ResultVO<T> {
 
     /**
      * 错误码
@@ -32,7 +32,7 @@ public class ResultVo<T> {
      * @param meg
      * @param date
      */
-    public ResultVo(Integer code, String meg, T date) {
+    public ResultVO(Integer code, String meg, T date) {
         this.code = code;
         this.meg = meg;
         this.date = date;

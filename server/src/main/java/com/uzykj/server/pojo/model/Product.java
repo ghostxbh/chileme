@@ -5,6 +5,7 @@ import lombok.Data;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.math.BigDecimal;
 import java.util.Date;
 
 /**
@@ -19,12 +20,11 @@ import java.util.Date;
 public class Product {
 
     @Id
-    @GeneratedValue
-    private Integer id;
+    private String id;
 
     private String name;
 
-    private Double price;
+    private BigDecimal price;
 
     private Integer stock;//库存
 

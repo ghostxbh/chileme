@@ -5,12 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.uzykj</groupId>
-    <artifactId>diancan</artifactId>
+    <artifactId>diancan-prodct</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>diancan</name>
-    <description>点餐系统父pom</description>
+    <description>商品父pom</description>
 
     <modules>
         <module>client</module>
