@@ -15,10 +15,10 @@ import java.util.Arrays;
 @Slf4j
 public class ClientController {
 
-    //    @Autowired
-//    private LoadBalancerClient loadBalancerClient;
-//    @Autowired
-//    private RestTemplate restTemplate;
+    @Autowired
+    private LoadBalancerClient loadBalancerClient;
+    @Autowired
+   private RestTemplate restTemplate;
     @Autowired
     private ProductClient productClient;
 
